@@ -2,5 +2,5 @@
 
 int StringCalculator::add(string input){
 
-   return 0;
+   throw "Not Implemented";
 }
