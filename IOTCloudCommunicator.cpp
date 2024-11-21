@@ -1,6 +1,7 @@
-class IOTCloudCommunicator{
-    public:
-          int  pushMessage(string message){
+#include "ICloudCommunicator.h"
+
+
+          int ICloudCommunicator:: pushMessage(string message){
               //Interact with internet and push the message to MessageQueue
             //if communiction succesfull return value from ramge {200 -400} status code otherwise returns errocode (400 - 500)
               std::random_device rd;
@@ -10,4 +11,3 @@ class IOTCloudCommunicator{
             
           }
 
-};
