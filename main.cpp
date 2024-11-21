@@ -1,11 +1,13 @@
 #include "SpeedMonitor.h"
 #include "ConsoleLogger.h"
-#include "BNFSpeedSensor.cpp"
+#include "BNFSpeedSensor.h"
+#include "IOTCloudCommunicator.h"
 
 int main(){
   ConsoleLogger logger;
-  BNFSpeedSensor speedSensor
-SpeedMonitor instance {10,&logger,&speedSenor};
+  BNFSpeedSensor speedSensor;
+  IOTCloudCommunicator cloudCommunicator;
+SpeedMonitor instance {10,&logger,&speedSenor,&cloudCommunicator};
   instance.monitor();
   instance.monitor();
   instance.monitor();
