@@ -18,7 +18,8 @@ enable_testing()
 add_compile_options("--coverage")
 add_executable(
   cleancode
- 
+  StringCalculator.Tests.cpp
+  StringCalculator.cpp
 )
 target_link_libraries(
   cleancode
