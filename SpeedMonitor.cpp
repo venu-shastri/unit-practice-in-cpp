@@ -14,7 +14,7 @@ using namespace std;
             if(currentSpeedInKmph > _speedThreshold){
                   double mph = currentSpeedInKmph * 0.621371;
                   string message="Current Speed in Miles "+ to_string(mph);
-                 int statusCode= cloudCommuniccator.pushMessage(message);
+                 int statusCode= _cloudCommunicatorInstance.pushMessage(message);
                   if(statusCode > 400){
                       //Log Message to Console
                        this->_logger->write("Error In Communication Unable to Contact Server " + message;
