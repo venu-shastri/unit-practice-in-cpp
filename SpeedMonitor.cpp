@@ -8,9 +8,6 @@ using namespace std;
             if(_speedThreshold  < 1 || _speedThreshold > 100){
               this->_logger->write("_speedThreshold value must be in the ramge {1-100} "+ to_string(_speedThreshold)");
             }
-              
-         
-            IOTCloudCommunicator cloudCommuniccator;
             int currentSpeedInKmph=_speedSensorInstance->getCurrentSpeed();
             
             this._logger->write("Current Speed In Kmph " + to_string(currentSpeedInKmph));
