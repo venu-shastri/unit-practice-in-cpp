@@ -6,12 +6,12 @@ using namespace std;
 
  void SpeedMonitor::monitor(){
             if(_speedThreshold  < 1 || _speedThreshold > 100){
-              this->_logger.write("_speedThreshold value must be in the ramge {1-100} "+ to_string(_speedThreshold)");
+              this->_logger->write("_speedThreshold value must be in the ramge {1-100} "+ to_string(_speedThreshold)");
             }
               
-            BNFSpeedSensor speedSensorInstance;
+         
             IOTCloudCommunicator cloudCommuniccator;
-            int currentSpeedInKmph=speedSensorInstance.getCurrentSpeed();
+            int currentSpeedInKmph=_speedSensorInstance->getCurrentSpeed();
             
             this._logger->write("Current Speed In Kmph " + to_string(currentSpeedInKmph));
             if(currentSpeedInKmph > _speedThreshold){
@@ -20,7 +20,7 @@ using namespace std;
                  int statusCode= cloudCommuniccator.pushMessage(message);
                   if(statusCode > 400){
                       //Log Message to Console
-                       this->_logger.write("Error In Communication Unable to Contact Server " + message;
+                       this->_logger->write("Error In Communication Unable to Contact Server " + message;
                   }
                  
             }
