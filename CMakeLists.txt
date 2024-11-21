@@ -18,6 +18,10 @@ enable_testing()
 add_compile_options("--coverage")
 add_executable(
   cleancode
+  BNFSpeedSensor.cpp
+  ConsoleLogger.cpp
+  IOTCloudCommunicator.cpp
+  SpeedMonitor.cpp
   
 )
 target_link_libraries(
